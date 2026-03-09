@@ -7,6 +7,7 @@ import { Button, IconButton, InputAdornment } from '@mui/material';
 import { Container } from 'react-bootstrap';
 import { MdOutlineLock, MdOutlineLockOpen } from "react-icons/md";
 import { FaRegUser } from "react-icons/fa";
+import { showError, showSuccess } from '../../utils/toast';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -16,14 +17,29 @@ const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+       e.preventDefault();
 
-        // Static login
-        if (username === "siddhi" && password === "1234") {
-            navigate("/dashboard");
-        } else {
-            alert("Invalid credentials");
-        }
+  if (!username && !password) {
+    showError("Username and Password required");
+    return;
+  }
+
+  if (!username) {
+    showError("Username required");
+    return;
+  }
+
+  if (!password) {
+    showError("Password required");
+    return;
+  }
+
+  if (username === "siddhi" && password === "1234") {
+    showSuccess("Login successful");
+    navigate("/dashboard");
+  } else {
+    showError("Invalid credentials");
+  }
     };
     return (
         <Container>
