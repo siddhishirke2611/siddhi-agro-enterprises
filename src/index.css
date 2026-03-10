@@ -8,11 +8,20 @@ body,
   height: 100%;
   width: 100%;
   font-family: "Source Sans 3", sans-serif;
-  background-color: #f7f7f7;
+  background-color: var(--bg-color);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   overflow: hidden;
+}
+
+:root {
+  --bg-color: #f7f7f7;
+  --card-bg:#f8f8fb00;
+  --text-color: #1a1a1a;
+  --primary-color: #2d64fd;
+  --secondary-color: #0000008a;
+  --border-color: #e5e7eb;
 }
 
 .app{

@@ -8,28 +8,27 @@
 }
 
 .login-box {
-    background-color: #f8f8fb00;;
+    background-color: var(--card-bg);
     padding: 40px 24px;
     width: 500px;
     border-radius: 6px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.login-text{
+.login-text {
     text-align: center;
 }
 
-.login-text .text1{
+.login-text .text1 {
     font-size: 30px;
-    background-image: linear-gradient(0deg,rgba(34, 184, 195, 1) 0%, rgba(45, 100, 253, 1) 100%);
-    color: transparent;
+    color: var(--primary-color);
     background-clip: text;
     margin: 0;
 }
 
-.login-text .text2{
+.login-text .text2 {
     font-size: 18px;
-    color: #0000008a;
+    color: var(--secondary-color);
     margin-top: 0;
     font-weight: 500;
 }
@@ -40,24 +39,39 @@
     gap: 8px;
 }
 
-.login-btn{
-    margin: auto!important;
-    display: flex!important;
-    background: linear-gradient(0deg,rgba(34, 184, 195, 1) 0%, rgba(45, 100, 253, 1) 100%);
+.login-btn {
+    margin: auto !important;
+    display: flex !important;
+    background: var(--primary-color);
 }
 
-.login-btn:hover{
+.login-btn:hover {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
-.username, .password{
-    color: #2268c3;
+.username,
+.password {
+    color: var(--primary-color);
     transition: .3s ease;
 }
 
+.forgot-password a {
+    color: var(--secondary-color);
+}
 
-@media screen and (max-width: 540px){
-    .login-box{
+.forgot-password a:hover {
+    color: var(--primary-color);
+}
+
+.forgot-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+@media screen and (max-width: 540px) {
+    .login-box {
         margin: 10px;
     }
 }

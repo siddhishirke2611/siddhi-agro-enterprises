@@ -3,11 +3,11 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    box-shadow: rgb(0 0 0 / 4%) 0px 14px 28px, rgb(0 0 0 / 0%) 0px 10px 10px;
+    box-shadow: rgb(100 100 111 / 4%) 0px 7px 29px 0px;
 }
 
 .logo{
-    color: #0000008a;
+    color: var(--secondary-color);
     font-size: 20px;
     font-weight: 600;
 }
@@ -19,7 +19,7 @@
 
 
 .setting-icon{
-    color: #0000008a;
+    color: var(--secondary-color);
     align-items: center;
     font-size: 25px;
     font-weight: 700;

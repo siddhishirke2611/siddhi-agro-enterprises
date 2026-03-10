@@ -3,6 +3,7 @@ import Dashboard from './pages/Dashboard/Dashboard'
 import Login from './pages/Login/Login'
 import MainLayout from './Layouts/MainLayout'
 import Toaster from './components/Toaster/Toaster'
+import ForgotPassword from './pages/ForgotPassword/ForgotPassword'
 
 function App() {
 
@@ -12,8 +13,9 @@ function App() {
       <Routes>
         <Route element={<MainLayout/>}>
           <Route path="/" element={<Login />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/forgot-password" element={<ForgotPassword/>}/>
         </Route>
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </>
   )

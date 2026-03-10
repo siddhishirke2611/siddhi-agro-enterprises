@@ -1,12 +1,13 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import './Login.css'
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { Button, IconButton, InputAdornment } from '@mui/material';
-import { Container } from 'react-bootstrap';
-import { MdOutlineLock, MdOutlineLockOpen } from "react-icons/md";
+import { Container} from 'react-bootstrap';
 import { FaRegUser } from "react-icons/fa";
+import { LuEyeClosed } from "react-icons/lu";
+import { MdRemoveRedEye } from "react-icons/md";
 import { showError, showSuccess } from '../../utils/toast';
 
 const Login = () => {
@@ -17,29 +18,29 @@ const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
 
     const handleSubmit = (e) => {
-       e.preventDefault();
+        e.preventDefault();
 
-  if (!username && !password) {
-    showError("Username and Password required");
-    return;
-  }
+        if (!username && !password) {
+            showError("Username and Password required");
+            return;
+        }
 
-  if (!username) {
-    showError("Username required");
-    return;
-  }
+        if (!username) {
+            showError("Username required");
+            return;
+        }
 
-  if (!password) {
-    showError("Password required");
-    return;
-  }
+        if (!password) {
+            showError("Password required");
+            return;
+        }
 
-  if (username === "siddhi" && password === "1234") {
-    showSuccess("Login successful");
-    navigate("/dashboard");
-  } else {
-    showError("Invalid credentials");
-  }
+        if (username === "siddhi" && password === "1234") {
+            showSuccess("Login successful");
+            navigate("/dashboard");
+        } else {
+            showError("Invalid credentials");
+        }
     };
     return (
         <Container>
@@ -68,7 +69,7 @@ const Login = () => {
                                         <InputAdornment position="end">
 
                                             <IconButton>
-                                                <FaRegUser className='username'/>
+                                                <FaRegUser className='username' />
                                             </IconButton>
 
                                         </InputAdornment>
@@ -89,13 +90,20 @@ const Login = () => {
                                             <IconButton
                                                 onClick={() => setShowPassword(!showPassword)}
                                             >
-                                                {showPassword ? <MdOutlineLockOpen className='password'/> : <MdOutlineLock className='password'/>}
+                                                {showPassword ? <MdRemoveRedEye className='password' /> : <LuEyeClosed className='password' />}
                                             </IconButton>
 
                                         </InputAdornment>
                                     )
                                 }}
                             />
+                            <div className="forgot-password">
+                                <NavLink
+                                    to="/forgot-password"
+                                >
+                                    Forgot Password ?
+                                </NavLink>
+                            </div>
                         </div>
                     </Box>
                     <Button variant='contained' className='login-btn' type='submit' onClick={handleSubmit}>
