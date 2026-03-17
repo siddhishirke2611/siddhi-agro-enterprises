@@ -3,6 +3,7 @@ import './Header.css'
 import { MdSettings } from "react-icons/md";
 import Settings from "../Settings/Settings";
 import { Button } from "react-bootstrap";
+import Logo from "../Logo/Logo";
 
 const Header = () => {
     const [openSettings, setOpenSettings] = useState(false);
@@ -13,12 +14,7 @@ const Header = () => {
     return (
         <>
             <div className='header'>
-                <div className='logo'>
-                    Demo
-                </div>
-                {/* <div className="setting" onClick={toggleSettings}>
-                    <MdOutlineSettings className="setting-icon"/>
-                </div> */}
+                <Logo/>
                 <Button className="setting" onClick={toggleSettings}>
                     <MdSettings className="setting-icon" />
                 </Button>

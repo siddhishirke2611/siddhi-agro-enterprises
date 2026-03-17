@@ -1,3 +1,26 @@
+.setting{
+    border: none!important;
+    background: none!important;
+}
+
+.setting-icon{
+    color: var(--secondary-color);
+    align-items: center;
+    font-size: 25px;
+    font-weight: 700;
+    cursor: pointer;
+    /* animation: spin 5s linear infinite; */
+}
+
+@keyframes spin {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
 .settings-sidebar{
   position: fixed;
   top: 0;
@@ -14,3 +37,4 @@
     justify-content: space-between;
     align-items: center;
 }
+
